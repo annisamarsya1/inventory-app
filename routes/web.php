@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
+
 
 Route::redirect('/', '/products');
 Route::redirect('/projects', '/products');
@@ -11,3 +13,4 @@ Route::get('/create', [ProductController::class, 'create']);
 Route::get('/edit/{product}', [ProductController::class, 'edit']);
 Route::delete('/delete/{product}', [ProductController::class, 'destroy']);
 
+Route::resource('categories', CategoryController::class);
